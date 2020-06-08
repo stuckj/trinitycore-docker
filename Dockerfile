@@ -32,8 +32,7 @@ RUN git clone -b 3.3.5 git://github.com/TrinityCore/TrinityCore.git
 RUN cd TrinityCore \
   && mkdir build \
   && cd build \
-  && cmake ../ -DCMAKE_INSTALL_PREFIX=/home/trinitycore -DCONF_DIR=/home/trinitycore/
-etc -DLIBSDIR=/home/trinitycore/lib \
+  && cmake ../ -DCMAKE_INSTALL_PREFIX=/home/trinitycore -DCONF_DIR=/home/trinitycore/etc -DLIBSDIR=/home/trinitycore/lib \
   && make -j $(nproc) install
 
 RUN chown -R trinitycore:trinitycore /home/trinitycore
